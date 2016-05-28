@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SLAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niz-U8-UoO" userLabel="ContainerView">
+                                <rect key="frame" x="0.0" y="126" width="600" height="103"/>
+                                <subviews>
+                                    <view tag="1001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YkD-ru-VtS" userLabel="Item1" customClass="SLAnimationItemView" customModule="SLAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="32" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="XHw-OC-LJq"/>
+                                            <constraint firstAttribute="width" constant="40" id="gJr-D5-hsz"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="icon1_selected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="icon1_unselected"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="selectItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEX-WR-C46"/>
+                                        </connections>
+                                    </view>
+                                    <view tag="1002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9c-uS-GTI" userLabel="Item2" customClass="SLAnimationItemView" customModule="SLAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="280" y="32" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="8SG-Rq-mpy"/>
+                                            <constraint firstAttribute="height" constant="40" id="fQF-HL-lQS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="icon2_selected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="icon2_unselected"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="selectItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nTb-jm-59m"/>
+                                        </connections>
+                                    </view>
+                                    <view tag="1003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5u-j3-aPC" userLabel="Item3" customClass="SLAnimationItemView" customModule="SLAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="520" y="32" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Coe-al-DEX"/>
+                                            <constraint firstAttribute="height" constant="40" id="F5V-hJ-A8h"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="icon3_selected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="icon3_unselected"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selectStatus" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="selectItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLF-kG-GbV"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="YkD-ru-VtS" firstAttribute="centerY" secondItem="niz-U8-UoO" secondAttribute="centerY" id="B9P-8n-2uV"/>
+                                    <constraint firstItem="P5u-j3-aPC" firstAttribute="centerY" secondItem="niz-U8-UoO" secondAttribute="centerY" id="LUq-QX-r7s"/>
+                                    <constraint firstItem="Y9c-uS-GTI" firstAttribute="centerY" secondItem="niz-U8-UoO" secondAttribute="centerY" id="Q2v-og-Ggj"/>
+                                    <constraint firstItem="Y9c-uS-GTI" firstAttribute="centerX" secondItem="niz-U8-UoO" secondAttribute="centerX" id="ZHy-53-kyI"/>
+                                    <constraint firstItem="YkD-ru-VtS" firstAttribute="leading" secondItem="niz-U8-UoO" secondAttribute="leading" constant="40" id="Zd1-hL-uFW"/>
+                                    <constraint firstAttribute="trailing" secondItem="P5u-j3-aPC" secondAttribute="trailing" constant="40" id="jAP-DK-0tr"/>
+                                    <constraint firstAttribute="height" constant="103" id="jIp-Fv-OxA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="niz-U8-UoO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Edc-sw-KeI"/>
+                            <constraint firstAttribute="trailing" secondItem="niz-U8-UoO" secondAttribute="trailing" id="SQu-qH-11g"/>
+                            <constraint firstItem="niz-U8-UoO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="p54-Ey-g3o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="niz-U8-UoO" id="50U-Kw-o9Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="410"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon1_selected" width="74" height="100"/>
+        <image name="icon1_unselected" width="148" height="200"/>
+        <image name="icon2_selected" width="84" height="88"/>
+        <image name="icon2_unselected" width="168" height="176"/>
+        <image name="icon3_selected" width="384" height="384"/>
+        <image name="icon3_unselected" width="768" height="768"/>
+    </resources>
+</document>
