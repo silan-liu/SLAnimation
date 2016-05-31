@@ -52,35 +52,18 @@ class SLAnimationItemView: UIButton {
     }
 
     // MARK: OutCircleLayer
-    var outCircleLayer: CAShapeLayer?
-//    lazy var outCircleLayer: CAShapeLayer = {
-//        let layer = CAShapeLayer()
-//
-//        layer.path = self.outCirclePath().CGPath
-//        layer.fillColor = UIColor.clearColor().CGColor
-//        layer.strokeColor = UIColor.redColor().CGColor
-//        layer.lineWidth = 1
-//
-//        self.layer.addSublayer(layer)
-//
-//        return layer
-//    }()
+    lazy private var outCircleLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
 
-    private func createOutCircleLayer() {
-        
-        if outCircleLayer == nil {
-            let layer = CAShapeLayer()
-            
-            layer.path = self.outCirclePath().CGPath
-            layer.fillColor = UIColor.clearColor().CGColor
-            layer.strokeColor = UIColor.redColor().CGColor
-            layer.lineWidth = 1
-            
-            self.layer.addSublayer(layer)
-            
-            outCircleLayer = layer
-        }
-    }
+        layer.path = self.outCirclePath().CGPath
+        layer.fillColor = UIColor.clearColor().CGColor
+        layer.strokeColor = UIColor.redColor().CGColor
+        layer.lineWidth = 1
+
+        self.layer.addSublayer(layer)
+
+        return layer
+    }()
     
     private func outCirclePath() -> UIBezierPath {
         let path = UIBezierPath()
@@ -152,19 +135,14 @@ class SLAnimationItemView: UIButton {
     // MARK: show/hide
     func showOutLineLayer(show: Bool) {
         
-        if show {
-            createOutCircleLayer()
+        UIView.animateWithDuration(0.3, animations: {
             
-        } else {
-            outCircleLayer?.removeFromSuperlayer()
-            outCircleLayer = nil
-        }
-        
-        // 如果不重新创建circleLayer，使用opacity或者hidden属性，动画结束后感觉有点顿，不知道为什么？
-        //            self.outCircleLayer?.opacity = show ? 1 : 0
-
-
-        UIView.animateWithDuration(0.03, animations: {
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            self.outCircleLayer.opacity = show ? 1 : 0
+            
+            CATransaction.commit()
+            
             self.normalImageView?.alpha = show ? 0 : 1
 
             }) { (flag) in
